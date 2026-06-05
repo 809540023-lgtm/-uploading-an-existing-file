@@ -1,0 +1,6 @@
+pandas>=2.0
+numpy>=1.24
+# 正式環境再加:
+# psycopg2-binary   # PostgreSQL
+# requests          # 串接證交所 / 金融數據 API
+# apscheduler       # 或用系統 cron 排程

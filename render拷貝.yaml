@@ -1,0 +1,12 @@
+# Render Blueprint — 量化後端每日排程
+# 在 Render → New → Blueprint 連到你的 repo，Render 會自動讀此檔建立服務。
+# 不需要手貼 API key（用 Render 網站 OAuth 連 GitHub 即可）。
+services:
+  - type: cron
+    name: quant-decision-engine
+    runtime: python
+    plan: free
+    # 每天 UTC 07:30 = 台灣 15:30（收盤後）；可依需求調整
+    schedule: "30 7 * * 1-5"
+    buildCommand: "pip install -r quant_system/requirements.txt"
+    startCommand: "cd quant_system && python decision_engine.py"
